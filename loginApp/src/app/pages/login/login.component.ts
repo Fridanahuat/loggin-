@@ -20,11 +20,11 @@ recordarme=true;
     private router: Router) { }
 
   ngOnInit() {
-    if(localStorage.getItem('email'))
-     {
-      this.usuario.email = localStorage.getItem('email');
-      this.recordarme = true;
-    }
+   // if(localStorage.getItem('email'))
+    // {
+    //  this.usuario.email = localStorage.getItem('email');
+    //  this.recordarme = true;
+   // }
 
   }
 
