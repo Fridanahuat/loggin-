@@ -7,8 +7,8 @@ import { UsuarioModel } from '../models/usuario.model';
 })
 export class AuthService {
 
-  private url= 'https://www.googleapis.com/identitytoolkit/v3/relyingparty';
-
+  private url= 'https://identitytoolkit.googleapis.com/v1/accounts:'
+private apikey= 'AIzaSyCj61t5NunynZ2URVmdT1QnL77U0NKyj8c'
 
 
   constructor(private http: HttpClient) { }
@@ -18,7 +18,10 @@ export class AuthService {
   }
 
   login(usuario: UsuarioModel){
-
+    const authData = {
+      ...usuario,
+      returnSecureToken:true
+    };
   }
 
   nuevoUsuario(usuario: UsuarioModel){
@@ -29,7 +32,12 @@ export class AuthService {
     };
 
     return this.http.post(
-      `${ this.url}/signupNewUser?key=[API_KEY]`,
+      `${ this.url}/verifyPassword?key=${this.apikey}`,
+      authData
+    );
+
+    return this.http.post(
+      `${ this.url}/signupNewUser?key=${this.apikey}`,
       authData
     );
   }
