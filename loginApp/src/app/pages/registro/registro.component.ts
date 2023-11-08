@@ -14,7 +14,7 @@ usuario:UsuarioModel= new UsuarioModel();
 
   ngOnInit() {
     this.usuario= new UsuarioModel();
-    this.usuario.email='fridanahuat@gmail.com';
+
   }
 
   onSubmit(form:NgForm){
