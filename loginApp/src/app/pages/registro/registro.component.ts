@@ -13,8 +13,12 @@ usuario:UsuarioModel= new UsuarioModel();
 
   ngOnInit() {
     this.usuario= new UsuarioModel();
-    this.usuario.email='fridan@gmail.com';
+    this.usuario.email='fridanahuat@gmail.com';
   }
 
+  onSubmit(){
+    console.log('Formulario enviado');
+    console.log(this.usuario);
+  }
 
 }
