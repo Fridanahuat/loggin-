@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { UsuarioModel } from 'src/app/models/usuario.model';
 
 @Component({
@@ -16,9 +17,13 @@ usuario:UsuarioModel= new UsuarioModel();
     this.usuario.email='fridanahuat@gmail.com';
   }
 
-  onSubmit(){
+  onSubmit(form:NgForm){
+
+      if(form.invalid){return;}
+
     console.log('Formulario enviado');
     console.log(this.usuario);
+    console.log(form);
   }
 
 }
